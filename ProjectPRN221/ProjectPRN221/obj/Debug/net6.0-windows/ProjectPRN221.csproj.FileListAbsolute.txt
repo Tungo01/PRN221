@@ -61,3 +61,8 @@ D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net6.0-
 D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net6.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net6.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net6.0-windows\appsettings.json
+D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\ResourceXAML\MainResource.baml
+D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\View\LoginWindow.g.cs
+D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\View\LoginWindow.baml
