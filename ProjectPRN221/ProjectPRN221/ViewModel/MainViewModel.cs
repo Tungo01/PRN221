@@ -17,7 +17,7 @@ namespace ProjectPRN221.ViewModel
             {
                 IsLoaded = true;
                 LoginWindow loginWindow = new LoginWindow();
-                loginWindow.ShowDialog();
+                loginWindow.Show();
             }
         }
     }

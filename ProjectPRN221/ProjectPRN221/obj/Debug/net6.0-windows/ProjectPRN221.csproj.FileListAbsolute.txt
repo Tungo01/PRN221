@@ -7,12 +7,10 @@ D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net6.0-
 D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
 D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
 D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\ProjectPRN221.csproj.AssemblyReference.cache
-D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\MainWindow.g.cs
 D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\App.g.cs
 D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\ProjectPRN221_MarkupCompile.cache
 D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\ProjectPRN221_MarkupCompile.lref
 D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\App.baml
-D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\MainWindow.baml
 D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\ProjectPRN221.g.resources
 D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\ProjectPRN221.GeneratedMSBuildEditorConfig.editorconfig
 D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\ProjectPRN221.AssemblyInfoInputs.cache
@@ -66,3 +64,7 @@ D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-
 D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\ResourceXAML\MainResource.baml
 D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\View\LoginWindow.g.cs
 D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\View\LoginWindow.baml
+D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\View\MainWindow.g.cs
+D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\View\MainWindow.baml
+D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\UserControllers\ControllBarUC.g.cs
+D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\UserControllers\ControllBarUC.baml
