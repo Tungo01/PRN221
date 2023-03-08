@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\App.xaml
-4-738473659
+11-2085536306
 
-19-1554852460
+26-1746614610
 223317935469
-ResourceXAML\MainResource.xaml;UserControllers\ControllBarUC.xaml;View\LoginWindow.xaml;View\MainWindow.xaml;
+ResourceXAML\MainResource.xaml;UserControllers\ControllBarUC.xaml;View\CustomerWindow.xaml;View\InputWindow.xaml;View\LoginWindow.xaml;View\MainWindow.xaml;View\ObjectWindow.xaml;View\OutputWindow.xaml;View\SuplierWindow.xaml;View\UnitWindow.xaml;View\UserWindow.xaml;
 
 False
 

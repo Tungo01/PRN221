@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectPRN221"
         mc:Ignorable="d"
+        
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -15,17 +16,19 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         xmlns:uc="clr-namespace:ProjectPRN221.UserControllers"
         DataContext="{StaticResource MainVM}"
-        WindowStyle="None"
+        
         ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        
         Title="MainWindow" Height="600" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <uc:ControllBarUC></uc:ControllBarUC>
-        </Grid>
+        <!--<Grid Grid.Row="0">-->
+            <!--<uc:ControllBarUC></uc:ControllBarUC>
+        </Grid>-->
 
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
@@ -49,8 +52,9 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" ToolTip="Input">
+                    <Button Grid.Column="0" Command="{Binding InputCommand}" ToolTip="Input">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>
@@ -64,7 +68,7 @@
                             </Grid>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="1" ToolTip="Output">
+                    <Button Grid.Column="1" Command="{Binding OutputCommand}" ToolTip="Output">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>
@@ -79,7 +83,7 @@
                         </Grid>
                         
                     </Button>
-                    <Button Grid.Column="2" ToolTip="Object">
+                    <Button Grid.Column="2" Command="{Binding ObjectCommand}" ToolTip="Object">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>
@@ -94,7 +98,7 @@
                         </Grid>
                         
                     </Button>
-                    <Button Grid.Column="3" ToolTip="Unit">
+                    <Button Grid.Column="3" Command="{Binding UnitCommand}" ToolTip="Unit">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>
@@ -109,7 +113,7 @@
                         </Grid>
                         
                     </Button>
-                    <Button Grid.Column="4" ToolTip="Suplier">
+                    <Button Grid.Column="4" Command="{Binding SuplierCommand}" ToolTip="Suplier">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>
@@ -124,7 +128,7 @@
                         </Grid>
                         
                     </Button>
-                    <Button Grid.Column="5" ToolTip="Customer">
+                    <Button Grid.Column="5" Command="{Binding CustomerCommand}" ToolTip="Customer">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>
@@ -135,6 +139,21 @@
                             </Grid>
                             <Grid Grid.Row="1">
                                 <materialDesign:PackIcon Kind = "HumanHandsup" HorizontalAlignment="Center" Width="24" Height="24"></materialDesign:PackIcon>
+                            </Grid>
+                        </Grid>
+                        
+                    </Button>
+                    <Button Grid.Column="6" Command="{Binding UserCommand}" ToolTip="User">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <TextBlock HorizontalAlignment="Center">User</TextBlock>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <materialDesign:PackIcon Kind = "AccountMultiple" HorizontalAlignment="Center" Width="24" Height="24"></materialDesign:PackIcon>
                             </Grid>
                         </Grid>
                         
