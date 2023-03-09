@@ -7,5 +7,7 @@ namespace ProjectPRN221.Models
     {
         public string Id { get; set; } = null!;
         public DateTime? DateOutput { get; set; }
+
+        public virtual OutputInfo? OutputInfo { get; set; }
     }
 }

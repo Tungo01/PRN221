@@ -1,4 +1,5 @@
-﻿using ProjectPRN221.View;
+﻿using ProjectPRN221.Models;
+using ProjectPRN221.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,6 +56,7 @@ namespace ProjectPRN221.ViewModel
                 OutputWindow wd = new OutputWindow();
                 wd.ShowDialog();
             });
+
         }
     }
 }

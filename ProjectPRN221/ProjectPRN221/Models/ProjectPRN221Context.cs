@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.Configuration;
 
 namespace ProjectPRN221.Models
 {
@@ -31,11 +29,11 @@ namespace ProjectPRN221.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var builder = new ConfigurationBuilder()
-                                       .SetBasePath(Directory.GetCurrentDirectory())
-                                       .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            IConfigurationRoot configuration = builder.Build();
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("server =DESKTOP-853TV7B; database = ProjectPRN221;uid=sa;pwd=123456;");
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -78,17 +76,19 @@ namespace ProjectPRN221.Models
                     .WithMany(p => p.InputInfos)
                     .HasForeignKey(d => d.IdInput)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__InputInfo__IdInp__37A5467C");
+                    .HasConstraintName("FK__InputInfo__IdInp__04E4BC85");
 
                 entity.HasOne(d => d.IdObjectNavigation)
                     .WithMany(p => p.InputInfos)
                     .HasForeignKey(d => d.IdObject)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__InputInfo__IdObj__36B12243");
+                    .HasConstraintName("FK__InputInfo__IdObj__05D8E0BE");
             });
 
             modelBuilder.Entity<Object>(entity =>
             {
+                entity.ToTable("Object");
+
                 entity.Property(e => e.Id).HasMaxLength(128);
 
                 entity.Property(e => e.Qrcode).HasColumnName("QRCode");
@@ -97,13 +97,13 @@ namespace ProjectPRN221.Models
                     .WithMany(p => p.Objects)
                     .HasForeignKey(d => d.IdSuplier)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Objects__IdSupli__2B3F6F97");
+                    .HasConstraintName("FK__Object__IdSuplie__07C12930");
 
                 entity.HasOne(d => d.IdUnitNavigation)
                     .WithMany(p => p.Objects)
                     .HasForeignKey(d => d.IdUnit)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Objects__BarCode__2A4B4B5E");
+                    .HasConstraintName("FK__Object__IdUnit__06CD04F7");
             });
 
             modelBuilder.Entity<Output>(entity =>
@@ -121,27 +121,27 @@ namespace ProjectPRN221.Models
 
                 entity.Property(e => e.Id).HasMaxLength(128);
 
-                entity.Property(e => e.IdInputInfo).HasMaxLength(128);
-
                 entity.Property(e => e.IdObject).HasMaxLength(128);
+
+                entity.Property(e => e.IdOutputInfo).HasMaxLength(128);
+
+                entity.HasOne(d => d.IdNavigation)
+                    .WithOne(p => p.OutputInfo)
+                    .HasForeignKey<OutputInfo>(d => d.Id)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__OutputInfo__Id__7A672E12");
 
                 entity.HasOne(d => d.IdCustomerNavigation)
                     .WithMany(p => p.OutputInfos)
                     .HasForeignKey(d => d.IdCustomer)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__OutputInf__IdCus__3D5E1FD2");
-
-                entity.HasOne(d => d.IdInputInfoNavigation)
-                    .WithMany(p => p.OutputInfos)
-                    .HasForeignKey(d => d.IdInputInfo)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__OutputInf__IdInp__3E52440B");
+                    .HasConstraintName("FK__OutputInf__IdCus__08B54D69");
 
                 entity.HasOne(d => d.IdObjectNavigation)
                     .WithMany(p => p.OutputInfos)
                     .HasForeignKey(d => d.IdObject)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__OutputInf__IdObj__3C69FB99");
+                    .HasConstraintName("FK__OutputInf__IdObj__09A971A2");
             });
 
             modelBuilder.Entity<Suplier>(entity =>
@@ -168,7 +168,7 @@ namespace ProjectPRN221.Models
                     .WithMany(p => p.Users)
                     .HasForeignKey(d => d.IdRole)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Users__IdRole__300424B4");
+                    .HasConstraintName("FK__Users__IdRole__0A9D95DB");
             });
 
             modelBuilder.Entity<UserRole>(entity =>
