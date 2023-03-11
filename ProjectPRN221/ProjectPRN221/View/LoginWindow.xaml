@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:local="clr-namespace:ProjectPRN221.View"
         mc:Ignorable="d"
         
@@ -16,17 +17,19 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         xmlns:uc="clr-namespace:ProjectPRN221.UserControllers"
         Title="LoginWindow" Height="300" Width="450"
-        WindowStyle="None"
         ResizeMode="NoResize"
+        
+        Name="loginWindow"
+        DataContext="{StaticResource LoginVM}"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+        <!--<Grid Grid.Row="0">
             <uc:ControllBarUC></uc:ControllBarUC>
-        </Grid>
+        </Grid>-->
         <materialDesign:Card Grid.Row="1" Width="350" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid>
                 <Grid.Resources>
@@ -41,12 +44,20 @@
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <TextBox materialDesign:HintAssist.Hint="Username"
+                             Text="{Binding UserName}"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 </Grid>
                 <Grid Grid.Row="1">
                     <PasswordBox x:Name="FloatingPasswordBox"
                                  materialDesign:HintAssist.Hint="Password"
-                                 Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                                 Style="{StaticResource MaterialDesignFloatingHintPasswordBox}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="PasswordChanged">
+                                <i:InvokeCommandAction Command="{Binding PasswordChangedCommand}"
+                                                       CommandParameter="{Binding ElementName=FloatingPasswordBox}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </PasswordBox>
                 </Grid>
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
@@ -55,12 +66,17 @@
                     </Grid.ColumnDefinitions>
 
                     <Button Grid.Column="0"    
+                            IsDefault="True"
                             Style="{StaticResource MaterialDesignRaisedButton}"    
                             Width="120"
+                            Command="{Binding LoginCommand}"
+                            CommandParameter="{Binding ElementName=loginWindow}"
                             ToolTip="Resource name: MaterialDesignRaisedButton" Content="Login"></Button>
                     <Button Grid.Column="1"    
                             Style="{StaticResource MaterialDesignRaisedButton}"    
                             Width="120"    
+                            Command="{Binding CloseCommand}"
+                            CommandParameter="{Binding ElementName=loginWindow}"
                             Background="IndianRed"
                             ToolTip="Resource name: MaterialDesignRaisedButton" Content="Quit"></Button>
                 </Grid>

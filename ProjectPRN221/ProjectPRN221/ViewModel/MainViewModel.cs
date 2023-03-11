@@ -3,6 +3,7 @@ using ProjectPRN221.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,6 +13,7 @@ namespace ProjectPRN221.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
+        public bool Isloaded = false;
         public ICommand UnitCommand { get; set; }
         public ICommand SuplierCommand { get; set; }
         public ICommand CustomerCommand { get; set; }
@@ -19,6 +21,8 @@ namespace ProjectPRN221.ViewModel
         public ICommand UserCommand { get; set; }
         public ICommand InputCommand { get; set; }
         public ICommand OutputCommand { get; set; }
+        public ICommand LoadedWindowCommand{ get; set; }
+
         public MainViewModel()
         {
             UnitCommand = new RelayCommand<object>((p) => { return true; }, (p) =>
@@ -56,7 +60,29 @@ namespace ProjectPRN221.ViewModel
                 OutputWindow wd = new OutputWindow();
                 wd.ShowDialog();
             });
+            LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) =>
+            {
+                if (p == null)
+                {
+                    return;
+                }
+                Isloaded = true;
+                LoginWindow loginWindow = new LoginWindow();
 
+                if (loginWindow.DataContext == null)
+                {
+                    return;
+                }
+                var loginVM = loginWindow.DataContext as LoginViewModel;
+                if (loginVM.IsLoggedIn)
+                {
+                    p.Show();
+                }
+                else
+                {
+                    p.Close();
+                }
+            });
         }
     }
 }

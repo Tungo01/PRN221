@@ -82,3 +82,5 @@ D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-
 D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\View\OutputWindow.g.cs
 D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\View\InputWindow.baml
 D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\obj\Debug\net6.0-windows\View\OutputWindow.baml
+D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net6.0-windows\Microsoft.Expression.Interactions.dll
+D:\Study\Ky7\PRN221\Project\PRN221\ProjectPRN221\ProjectPRN221\bin\Debug\net6.0-windows\System.Windows.Interactivity.dll
