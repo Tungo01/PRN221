@@ -34,7 +34,7 @@ namespace ProjectPRN221.ViewModel
 
 
         public ICommand AddCommand { get; set; }
-        public ICommand EditCommand { get; set; }
+        public ICommand UpdateCommand { get; set; }
 
         public UnitViewModel()
         {
@@ -61,7 +61,7 @@ namespace ProjectPRN221.ViewModel
                 List.Add(unit);
             });
 
-            EditCommand = new RelayCommand<object>((p) =>
+            UpdateCommand = new RelayCommand<object>((p) =>
             {
                 if (string.IsNullOrEmpty(DisplayName) || SelectedItem == null)
                     return false;

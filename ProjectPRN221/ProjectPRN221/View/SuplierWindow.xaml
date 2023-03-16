@@ -18,7 +18,8 @@
         WindowStartupLocation="CenterScreen"
         x:Name="window"
         
-        Title="SuplierWindow" Height="450" Width="830">
+        DataContext="{StaticResource SuplierVM}"
+        Title="SuplierWindow" Height="450" Width="850">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -67,7 +68,7 @@
                                 <GridViewColumn Header="Phone" DisplayMemberBinding="{Binding Phone}"></GridViewColumn>
                                 <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}"></GridViewColumn>
                                 <GridViewColumn Header="MoreInfo" DisplayMemberBinding="{Binding MoreInfo}"></GridViewColumn>
-                                <GridViewColumn Header="Contract Date" DisplayMemberBinding="{Binding ContractDate}"></GridViewColumn>
+                                <GridViewColumn Header="Contract Date" DisplayMemberBinding="{Binding ContractDate, StringFormat='MM/dd/yyyy'}"></GridViewColumn>
                             </GridView>
                         </ListView.View>
                     </ListView>
