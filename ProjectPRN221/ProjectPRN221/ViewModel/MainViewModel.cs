@@ -105,11 +105,11 @@ namespace ProjectPRN221.ViewModel
                     int sumInput = 0;
                     int sumOutput = 0;
 
-                    if (inputList != null)
+                    if (inputList != null && inputList.Count() > 0)
                     {
                         sumInput = (int)inputList.Sum(p => p.Count);
                     }
-                    if (outputList != null)
+                    if (outputList != null && outputList.Count() > 0)
                     {
                         sumOutput = (int)outputList.Sum(p => p.Count);
                     }

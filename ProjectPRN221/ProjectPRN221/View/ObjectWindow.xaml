@@ -18,6 +18,7 @@
         WindowStartupLocation="CenterScreen"
         x:Name="window"
         
+        DataContext="{StaticResource ObjectVM}"
         Title="ObjectWindow" Height="450" Width="750">
     <Grid>
         <Grid.RowDefinitions>
@@ -39,8 +40,8 @@
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <WrapPanel Margin="0 5 0 10">
                     <TextBox Text="{Binding DisplayName, UpdateSourceTrigger=PropertyChanged}" Width="120" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Name" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
-                    <ComboBox ItemsSource="{Binding Unit}" SelectedItem="{Binding SelectedUnit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="120" Margin="5 5 15 5" IsEditable="True" materialDesign:HintAssist.Hint="UnitName" Style="{StaticResource MaterialDesignFloatingHintComboBox}"/>
-                    <ComboBox ItemsSource="{Binding Splier}" SelectedItem="{Binding SelectedSuplier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="120" Margin="5 5 15 5" IsEditable="True" materialDesign:HintAssist.Hint="Suplier" Style="{StaticResource MaterialDesignFloatingHintComboBox}"/>
+                    <ComboBox ItemsSource="{Binding Unit}" DisplayMemberPath="DisplayName" SelectedItem="{Binding SelectedUnit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="120" Margin="5 5 15 5" IsEditable="True" materialDesign:HintAssist.Hint="UnitName" Style="{StaticResource MaterialDesignFloatingHintComboBox}"/>
+                    <ComboBox ItemsSource="{Binding Suplier}" DisplayMemberPath="DisplayName" SelectedItem="{Binding SelectedSuplier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="120" Margin="5 5 15 5" IsEditable="True" materialDesign:HintAssist.Hint="Suplier" Style="{StaticResource MaterialDesignFloatingHintComboBox}"/>
                     <TextBox Text="{Binding QRCode, UpdateSourceTrigger=PropertyChanged}" Width="120" Margin="5 5 15 5" materialDesign:HintAssist.Hint="QRCode" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
                     <TextBox Text="{Binding BarCode, UpdateSourceTrigger=PropertyChanged}" Width="120" Margin="5 5 15 5" materialDesign:HintAssist.Hint="BarCode" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
                 </WrapPanel>
